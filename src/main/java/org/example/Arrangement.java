@@ -34,4 +34,3 @@ public class Arrangement {
     }
 }
 
-// This code is contributed by Vedant Harshit
