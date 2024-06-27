@@ -1,6 +1,6 @@
 package org.example;
 
-public class ReverseString {
+public class Reverse {
 
     private static void reverseStr() {
         String str = "Hello";

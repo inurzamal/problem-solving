@@ -1,6 +1,6 @@
 package org.example;
 
-public class Arrangement {
+public class ReArrange {
 
     static void rearrange(int[] arr, int n){
         int j=0, temp;
@@ -26,7 +26,7 @@ public class Arrangement {
     // Driver code
     public static void main(String[] args)
     {
-        int[] arr = { 1, 2,  -4, -5, 7};
+        int[] arr = { -1, 2,  -4, -5, 7};
         int n = arr.length;
         rearrange(arr, n);
         printArray(arr, n);
