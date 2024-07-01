@@ -24,7 +24,7 @@ public class StreamExample {
 
 
         List<Employee> sortedList = emp.stream().sorted((o1,o2)-> (int) (o1.getSalary()-o2.getSalary())).collect(Collectors.toList());
-        Double secondHighestSalary = sortedList.stream().map(e -> e.getSalary()).collect(Collectors.toList()).get(sortedList.size() - 2);
+        Double secondHighestSalary = sortedList.stream().map(Employee::getSalary).toList().get(sortedList.size() - 2);
         System.out.println(secondHighestSalary);
 
     }
