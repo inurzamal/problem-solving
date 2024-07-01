@@ -12,6 +12,7 @@ public class UniqueElements {
         Map<Integer, Long> countMap = list.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         List<Integer> unique = list.stream().filter(e-> countMap.get(e) == 1).collect(Collectors.toList());
+
         System.out.println(unique);
 
 
