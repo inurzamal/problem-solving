@@ -1,6 +1,6 @@
 package org.example;
 
-public class CountOccurence {
+public class CountGivenCharacter {
 
     static int characterOccurence(String str, char c){
         int count = 0;

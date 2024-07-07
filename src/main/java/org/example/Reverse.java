@@ -2,8 +2,7 @@ package org.example;
 
 public class Reverse {
 
-    private static void reverseStr() {
-        String str = "Hello";
+    private static void reverseStr(String str) {
         char[] charArray = str.toCharArray();
         for (int i = charArray.length-1; i >= 0; i--){
             System.out.print(charArray[i]+ " ");
@@ -29,7 +28,9 @@ public class Reverse {
 
     public static void main(String[] args) {
 
-        reverseStr();
+        String str = "Hello";
+        reverseStr(str);
+
         System.out.println();
 
         int[] arr = {1,2,3,4,5};
@@ -37,7 +38,4 @@ public class Reverse {
         printArray(arr, arr.length);
 
     }
-
-
-
 }
