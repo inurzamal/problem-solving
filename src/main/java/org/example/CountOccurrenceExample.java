@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class CountOccurrenceExample {
@@ -23,5 +24,10 @@ public class CountOccurrenceExample {
         //Count each character in the word
         Map<Integer, List<String>> map2 = Arrays.stream(str.toLowerCase().split(" ")).collect(Collectors.groupingBy(String::length));
         System.out.println(map2);
+
+        // Frequency of elements in an array
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 3, 4, 5, 5, 5);
+        Map<Integer, Long> counts = numbers.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(counts);
     }
 }
