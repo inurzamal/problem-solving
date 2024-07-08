@@ -1,0 +1,8 @@
+Multithreading Terminology:
+ExecutorService: Manages a pool of threads for executing tasks asynchronously.
+Thread Pool (newFixedThreadPool(2)): Contains a fixed number of threads that can execute tasks concurrently.
+Task Submission (executor.submit()): Submits tasks to the executor service for concurrent execution.
+Executor Shutdown: Initiates termination of the executor service, preventing new tasks from being accepted.
+Awaiting Task Termination (awaitTermination()): Waits for all tasks to complete before proceeding.
+Forcing Shutdown (shutdownNow()): Interrupts running tasks and shuts down the executor immediately if tasks do not complete within a specified time.
+Synchronization (synchronized): Controls access to shared resources or critical sections of code among multiple threads to avoid concurrency issues like race conditions.
