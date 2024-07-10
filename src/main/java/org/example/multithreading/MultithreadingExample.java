@@ -4,10 +4,7 @@ import org.example.multithreading.task.Task1;
 import org.example.multithreading.task.Task2;
 import org.example.multithreading.task.Task3;
 
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 /*public class MultithreadingExample {
     public static void main(String[] args) {
@@ -94,7 +91,15 @@ public class MultithreadingExample {
             throw new RuntimeException(e);
         }
 
-        executorService.shutdown();
+        executorService.shutdown(); // initiates shutdown process after submitting all task.
+        try {
+            if (!executorService.awaitTermination(60, TimeUnit.SECONDS)){
+                System.out.println("Waiting time is more than 60 seconds, Shutting down Task forcefully..");
+                executorService.shutdownNow(); // shutdown forcefully in-case it is not terminating within 1 minute
+            }
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 
