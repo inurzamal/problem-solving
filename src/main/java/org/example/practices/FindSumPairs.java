@@ -1,4 +1,4 @@
-package org.example;
+package org.example.practices;
 import java.util.HashMap;
 
 public class FindSumPairs {
