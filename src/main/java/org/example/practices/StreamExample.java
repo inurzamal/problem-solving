@@ -2,9 +2,8 @@ package org.example.practices;
 
 import org.example.dto.Employee;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 public class StreamExample {
@@ -15,7 +14,7 @@ public class StreamExample {
         emp.add(new Employee(1, "Rahul", "DevOps", 200));
         emp.add(new Employee(2, "Karan", "System",300));
         emp.add(new Employee(3, "Simran","DevOps",150));
-
+        emp.add(new Employee(4, "Raju", "System",500));
         // Find Distinct Departments
         List<String> departments = emp.stream().map(Employee::getDepartment).distinct().toList();
         System.out.println("Distinct Departments: "+ departments);
@@ -44,6 +43,12 @@ public class StreamExample {
                 .forEach(e -> e.setSalary(e.getSalary() * 1.20));
 
         emp.forEach(System.out::println);
+
+        // Department wise Highest Salary
+        System.out.println("Department wise Highest Salary:");
+        Comparator<Employee> comparing = Comparator.comparing(Employee::getSalary);
+        Map<String, Optional<Employee>> optionalMap = emp.stream().collect(Collectors.groupingBy(Employee::getDepartment, Collectors.maxBy(comparing)));
+        optionalMap.forEach((i,j)-> System.out.println(i+" "+(j.isPresent()?j.get():"Not Available")));
 
     }
 
